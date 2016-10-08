@@ -20,7 +20,7 @@ public abstract class MyBiTreeIterator {
 		this.root = root;
 	}
 	
-	//这两个抽象类由具体遍历子类实现
+	//这两个抽象方法由具体遍历子类实现
 	public abstract void reset();
 
 	public abstract void next();

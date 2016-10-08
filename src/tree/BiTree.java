@@ -133,9 +133,17 @@ public class BiTree {
 		}
 		if(root.getLeftChild() != null){
 			node = search(root.getLeftChild(), obj);
+			if(node != null)
+			{
+				return node;
+			}
 		}
 		if(root.getRightChild() != null){
 			node = search(root.getRightChild(), obj);
+			if(node != null)
+			{
+				return node;
+			}
 		}
 		return node;
 	}

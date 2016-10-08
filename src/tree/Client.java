@@ -32,8 +32,7 @@ public class Client {
 		System.out.println();
 		BiTree.levOrder(root);//层序遍历
 		System.out.println();
-		System.out.println(BiTree.search(root, "D"));//查找节点
-
+		System.out.println(BiTree.search(root, "B"));//查找节点
 	}
 
 }
