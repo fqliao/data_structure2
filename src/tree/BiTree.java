@@ -147,4 +147,22 @@ public class BiTree {
 		}
 		return node;
 	}
+	
+	//翻转二叉树
+	public static void reverse(BiTreeNode root)
+	{
+		BiTreeNode tempNode;
+		tempNode = root.getLeftChild();
+		root.setLeftChild(root.getRightChild());
+		root.setRightChild(tempNode);
+		
+		if(root.getLeftChild() != null)
+		{
+			reverse(root.getLeftChild());
+		}
+		if(root.getRightChild() != null)
+		{
+			reverse(root.getRightChild());
+		}
+	}
 }

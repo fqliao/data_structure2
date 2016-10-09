@@ -33,6 +33,10 @@ public class Client {
 		BiTree.levOrder(root);//层序遍历
 		System.out.println();
 		System.out.println(BiTree.search(root, "B"));//查找节点
+		
+		//翻转二叉树
+		BiTree.reverse(root);
+		BiTree.printBiTree(root, 0);
 	}
 
 }
