@@ -1,42 +1,39 @@
 package tree;
+
 /**
- * 测试二叉树
- * @author lfq
- *
+ * @decription:测试二叉树
+ * @version:1.1
+ * @date: 2016年10月22日下午7:21:07
+ * @author: lfq
+ * 
  */
 public class Client {
 	
-	/**
-	 * 构建树，从叶子节点到根节点构建
-	 * @return
-	 */
-	public static BiTreeNode makeTree(){
-		BiTreeNode a,b,c,d,e,f,g;
-		g = new BiTreeNode(null, "G", null);
-		d = new BiTreeNode(null,"D",g);
-		b = new BiTreeNode(d,"B",null);
-		e = new BiTreeNode(null,"E",null);
-		f = new BiTreeNode(null,"F",null);
-		c = new BiTreeNode(e,"C",f);
-		a = new BiTreeNode(b,"A",c);
-		return a;
-	}
 	public static void main(String[] args) {
-		BiTreeNode root = makeTree();//构建树
-		BiTree.printBiTree(root, 0);//打印树
-		BiTree.preOrder(root);//前序遍历
-		System.out.println();
-		BiTree.inOrder(root);//中序遍历
-		System.out.println();
-		BiTree.postOrder(root);//后序遍历
-		System.out.println();
-		BiTree.levOrder(root);//层序遍历
-		System.out.println();
-		System.out.println(BiTree.search(root, "B"));//查找节点
 		
+		//前序遍历序列，其中#号是扩展的
+		String[] preOrderStr = {"A","B","#","D","#","#","C","#","#"};
+		//构建二叉树
+		BiTreeNode tree = BiTree.createBtree(preOrderStr);
+		BiTree.printBiTree(tree, 0);
+		System.out.println("层序：");
+		BiTree.levOrder(tree);
+		System.out.println();
+		System.out.println("前序：");
+		BiTree.preOrder(tree);
+		System.out.println();
+		System.out.println("中序：");
+		BiTree.inOrder(tree);
+		System.out.println();
+		System.out.println("后序：");
+		BiTree.postOrder(tree);
+		System.out.println();
+		//查找节点
+		System.out.println(BiTree.search(tree, "A"));
 		//翻转二叉树
-		BiTree.reverse(root);
-		BiTree.printBiTree(root, 0);
+		BiTree.reverse(tree);
+		System.out.println();
+		BiTree.printBiTree(tree, 0);
 	}
 
 }

@@ -8,10 +8,13 @@ import java.util.Queue;
  * @author lfq
  *
  */
+
 public class BiTree {
 	
-	private BiTreeNode root;//根节点
+	private  BiTreeNode root;//根节点
+	public static int count = 0;
 	
+
 	/**
 	 * 初始化空树
 	 */
@@ -41,6 +44,22 @@ public class BiTree {
 		this.root = new BiTreeNode(leftNode,data,rightNode);
 	}
 	
+    /** 
+     * 根据前序序列递归构建二叉树 
+     * 
+     * @return 
+     */ 
+    public static BiTreeNode createBtree(String[] str) { 
+      BiTreeNode root = null; 
+      if (count >= str.length || str[count++].equals("#")) { 
+        root = null; 
+      } else { 
+        root = new BiTreeNode(null,str[count - 1],null); 
+        root.setLeftChild(createBtree(str)); 
+        root.setRightChild(createBtree(str));
+      } 
+      return root; 
+    }
 	/**
 	 * 将原来的树逆时针旋转90度打印
 	 * @param root
