@@ -1,6 +1,5 @@
 package tree.iterator;
 
-import tree.BiTreeNode;
 
 /**
  * 二叉树游标遍历，非递归算法

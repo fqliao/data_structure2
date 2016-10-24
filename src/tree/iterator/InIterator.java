@@ -2,8 +2,6 @@ package tree.iterator;
 
 import java.util.Stack;
 
-import tree.BiTreeNode;
-
 /**
  * 中序遍历
  * @author lfq

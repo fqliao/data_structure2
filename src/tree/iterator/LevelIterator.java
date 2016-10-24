@@ -3,8 +3,6 @@ package tree.iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import tree.BiTreeNode;
-
 public class LevelIterator extends MyBiTreeIterator {
 	
 	Queue<BiTreeNode> queue = new LinkedList<BiTreeNode>();

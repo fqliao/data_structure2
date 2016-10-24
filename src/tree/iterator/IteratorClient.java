@@ -1,6 +1,5 @@
 package tree.iterator;
 
-import tree.BiTreeNode;
 
 public class IteratorClient {
 	

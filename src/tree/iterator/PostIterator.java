@@ -1,8 +1,6 @@
 package tree.iterator;
 
 import java.util.Stack;
-
-import tree.BiTreeNode;
 /**
  * 后序遍历 双堆栈
  * @author lfq

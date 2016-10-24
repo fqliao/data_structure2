@@ -1,4 +1,4 @@
-package tree;
+package tree.iterator;
 /**
  * 二叉树节点类
  * @author lfq

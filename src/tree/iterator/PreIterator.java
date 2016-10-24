@@ -2,8 +2,6 @@ package tree.iterator;
 
 import java.util.Stack;
 
-import tree.BiTreeNode;
-
 /**
  * 二叉树游标前序遍历
  * @author lfq
