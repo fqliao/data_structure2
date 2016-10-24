@@ -1,4 +1,7 @@
 package tree;
+
+import java.util.Objects;
+
 public class Node  
 {  
     private Object data;  
@@ -69,21 +72,25 @@ public class Node
     @Override  
     public boolean equals(Object obj)  
     {  
-        if (obj instanceof Node)  
-        {  
-            Node temp = (Node) obj;  
-            if (temp.getData() == this.data)  
-            {  
-                return true;  
-            }  
-        }  
-        return false;  
+        if(obj == null)
+        	return false;
+        
+        if(this == obj)
+        	return true;
+        
+        if(getClass() != obj.getClass())
+        	return false;
+       
+        Node other = (Node)obj;
+        return Objects.equals(data, other.data);
+
+
     }  
   
     @Override  
     public int hashCode()  
     {  
-        return super.hashCode() + Integer.parseInt(this.data.toString());  
+        return Objects.hash(data);
     }  
     
 	@Override
