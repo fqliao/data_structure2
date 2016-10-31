@@ -2,6 +2,8 @@ package tree.iterator;
 
 import java.util.Stack;
 
+import tree.Node;
+
 /**
  * 中序遍历
  * @author lfq
@@ -9,31 +11,31 @@ import java.util.Stack;
  */
 public class InIterator extends MyBiTreeIterator {
 	
-	Stack<BiTreeNode> stack = new Stack<BiTreeNode>();
+	Stack<Node> stack = new Stack<Node>();
 
 	public InIterator() {
 		super();
 	}
 
-	public InIterator(BiTreeNode root) {
+	public InIterator(Node root) {
 		super(root);
 	}
 	
 	/**
 	 * 得到最左边的节点
 	 * @param node
-	 * @return BiTreeNode
+	 * @return Node
 	 */
-	public BiTreeNode getFarLeft(BiTreeNode node)
+	public Node getFarLeft(Node node)
 	{
 		if(node == null)
 		{
 			return null;
 		}
-		while(node.getLeftChild() != null)
+		while(node.getLeft() != null)
 		{
 			stack.push(node);
-			node = node.getLeftChild();
+			node = node.getLeft();
 		}
 		return node;
 	}
@@ -57,9 +59,9 @@ public class InIterator extends MyBiTreeIterator {
 			return;
 		}
 		
-		if(this.getCurr().getRightChild() != null)
+		if(this.getCurr().getRight() != null)
 		{	//在右孩子中找到最左边的节点
-			this.setCurr(getFarLeft(this.getCurr().getRightChild()));
+			this.setCurr(getFarLeft(this.getCurr().getRight()));
 		}
 		else if(!stack.isEmpty())
 		{

@@ -1,5 +1,6 @@
 package tree.iterator;
 
+import tree.Node;
 
 /**
  * 二叉树游标遍历，非递归算法
@@ -7,14 +8,14 @@ package tree.iterator;
  *
  */
 public abstract class MyBiTreeIterator {
-	private BiTreeNode root;//根节点
-	private BiTreeNode curr;//当前节点
+	private Node root;//根节点
+	private Node curr;//当前节点
 	private boolean isComplete;//判断是否遍历结束
 	public MyBiTreeIterator()
 	{
 		
 	}
-	public MyBiTreeIterator(BiTreeNode root)
+	public MyBiTreeIterator(Node root)
 	{
 		this.root = root;
 	}
@@ -38,16 +39,16 @@ public abstract class MyBiTreeIterator {
 	{
 		return isComplete;
 	}
-	public BiTreeNode getRoot() {
+	public Node getRoot() {
 		return root;
 	}
-	public void setRoot(BiTreeNode root) {
+	public void setRoot(Node root) {
 		this.root = root;
 	}
-	public BiTreeNode getCurr() {
+	public Node getCurr() {
 		return curr;
 	}
-	public void setCurr(BiTreeNode curr) {
+	public void setCurr(Node curr) {
 		this.curr = curr;
 	}
 

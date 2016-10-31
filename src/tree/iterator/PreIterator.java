@@ -2,6 +2,8 @@ package tree.iterator;
 
 import java.util.Stack;
 
+import tree.Node;
+
 /**
  * 二叉树游标前序遍历
  * @author lfq
@@ -9,7 +11,7 @@ import java.util.Stack;
  */
 public class PreIterator extends MyBiTreeIterator {
 	
-	Stack<BiTreeNode> stack = new Stack<BiTreeNode>();
+	Stack<Node> stack = new Stack<Node>();
 
 	
 	public PreIterator() {
@@ -17,7 +19,7 @@ public class PreIterator extends MyBiTreeIterator {
 	}
 
 
-	public PreIterator(BiTreeNode root) {
+	public PreIterator(Node root) {
 		super(root);
 	}
 
@@ -41,13 +43,13 @@ public class PreIterator extends MyBiTreeIterator {
 			System.out.println("已经遍历到二叉树结尾！");
 			return;
 		}
-		if(this.getCurr().getRightChild() != null)
+		if(this.getCurr().getRight() != null)
 		{
-			stack.push(this.getCurr().getRightChild());
+			stack.push(this.getCurr().getRight());
 		}
-		if(this.getCurr().getLeftChild() != null)
+		if(this.getCurr().getLeft() != null)
 		{
-			stack.push(this.getCurr().getLeftChild());
+			stack.push(this.getCurr().getLeft());
 		}
 		if(!stack.empty())
 		{

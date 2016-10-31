@@ -1,6 +1,8 @@
 package tree.iterator;
 
 import java.util.Stack;
+
+import tree.Node;
 /**
  * 后序遍历 双堆栈
  * @author lfq
@@ -8,15 +10,15 @@ import java.util.Stack;
  */
 public class PostIterator extends MyBiTreeIterator {
 	
-	Stack<BiTreeNode> stack = new Stack<BiTreeNode>();
-	Stack<BiTreeNode> temp = new Stack<BiTreeNode>();
+	Stack<Node> stack = new Stack<Node>();
+	Stack<Node> temp = new Stack<Node>();
 	
 	
 	public PostIterator() {
 		super();
 	}
 
-	public PostIterator(BiTreeNode root) {
+	public PostIterator(Node root) {
 		super(root);
 	}
 
@@ -39,12 +41,12 @@ public class PostIterator extends MyBiTreeIterator {
 			{
 				temp.push(this.getCurr());
 				stack.push(this.getCurr());
-				this.setCurr(this.getCurr().getRightChild());
+				this.setCurr(this.getCurr().getRight());
 			}
 			if(stack.size() > 0)
 			{
 				this.setCurr(stack.pop());
-				this.setCurr(this.getCurr().getLeftChild());
+				this.setCurr(this.getCurr().getLeft());
 			}
 		}
 		

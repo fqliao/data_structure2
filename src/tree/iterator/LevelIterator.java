@@ -3,16 +3,18 @@ package tree.iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import tree.Node;
+
 public class LevelIterator extends MyBiTreeIterator {
 	
-	Queue<BiTreeNode> queue = new LinkedList<BiTreeNode>();
+	Queue<Node> queue = new LinkedList<Node>();
 	
 	
 	public LevelIterator() {
 		super();
 	}
 
-	public LevelIterator(BiTreeNode root) {
+	public LevelIterator(Node root) {
 		super(root);
 	}
 
@@ -28,13 +30,13 @@ public class LevelIterator extends MyBiTreeIterator {
 			this.setEndOfBiTree(false);
 		}
 		this.setCurr(this.getRoot());
-		if(this.getCurr().getLeftChild() != null)
+		if(this.getCurr().getLeft() != null)
 		{
-			queue.add(this.getCurr().getLeftChild());
+			queue.add(this.getCurr().getLeft());
 		}
-		if(this.getCurr().getRightChild() != null)
+		if(this.getCurr().getRight() != null)
 		{
-			queue.add(this.getCurr().getRightChild());
+			queue.add(this.getCurr().getRight());
 		}
 
 	}
@@ -48,13 +50,13 @@ public class LevelIterator extends MyBiTreeIterator {
 		if(!queue.isEmpty())
 		{
 			this.setCurr(queue.remove());
-			if(this.getCurr().getLeftChild() != null)
+			if(this.getCurr().getLeft() != null)
 			{
-				queue.add(this.getCurr().getLeftChild());
+				queue.add(this.getCurr().getLeft());
 			}
-			if(this.getCurr().getRightChild() != null)
+			if(this.getCurr().getRight() != null)
 			{
-				queue.add(this.getCurr().getRightChild());
+				queue.add(this.getCurr().getRight());
 			}
 		}
 		else
