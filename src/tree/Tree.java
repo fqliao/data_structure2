@@ -41,7 +41,7 @@ public class Tree
         return node;  
     }
     /**
-     * 打印树
+     * 打印树 右根左
      * @param root
      * @param level
      */
@@ -175,6 +175,15 @@ public class Tree
     		if(root.getRight() != null)
     			overturn(root.getRight());
     	}
+    }
+    
+    //求二叉树的深度
+    public  int depth(Node root){
+        if(root == null)  
+            return 0;  
+        int left = depth(root.getLeft());  
+        int right = depth(root.getRight());  
+        return (left > right)?(left+1):(right+1); 
     }
     
     /** 

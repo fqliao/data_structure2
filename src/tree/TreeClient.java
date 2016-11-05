@@ -7,7 +7,10 @@ public class TreeClient
           
         Tree tree = new Tree(data); // 根据层序创建普通二叉树  
         Node root = tree.getRoot();
+        
 		tree.printTree(root, 0); // 打印树
+		
+		System.out.println(tree.depth(root));//二叉树的深度
         
         tree.levOrder(root); //层次遍历
         
@@ -26,6 +29,7 @@ public class TreeClient
         tree.inThread(root);  // 中序遍历将二叉树线索化  
         tree.inThreadOrder(root);// 中序遍历线索化二叉树  
        
+        
         
     }  
 }  
