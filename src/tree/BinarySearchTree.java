@@ -18,8 +18,14 @@ public class BinarySearchTree {
         public Node(int data){  
             this.left = null;  
             this.right = null;  
-            this.data = data;  
-        }  
+            this.data = data; 
+            
+        }
+		@Override
+		public String toString() {
+			return "Node [left=" + left + ", right=" + right + ", data=" + data
+					+ "]";
+		}  
     }  
       
     public BinarySearchTree(){  
@@ -57,7 +63,7 @@ public class BinarySearchTree {
      */  
     public void preOrder(Node node){  
         if(node != null){  
-            System.out.println(node.data);  
+        	System.out.print(node.data + " ");  
             preOrder(node.left);  
             preOrder(node.right);  
         }  
@@ -70,7 +76,7 @@ public class BinarySearchTree {
     public void inOrder(Node node){  
         if(node != null){  
             inOrder(node.left);  
-            System.out.println(node.data);  
+            System.out.print(node.data + " ");   
             inOrder(node.right);  
         }  
     }  
@@ -83,7 +89,7 @@ public class BinarySearchTree {
         if(node != null){  
             postOrder(node.left);  
             postOrder(node.right);  
-            System.out.println(node.data);  
+            System.out.print(node.data + " ");  
         }  
     }  
       
@@ -93,8 +99,8 @@ public class BinarySearchTree {
         for (int i = 0; i < a.length; i++) {  
             bTree.buildTree(bTree.root, a[i]);  
         }  
-        bTree.preOrder(bTree.root);  
-//        bTree.inOrder(bTree.root);  
+//        bTree.preOrder(bTree.root);  
+        bTree.inOrder(bTree.root);  
 //        bTree.postOrder(bTree.root);  
     }  
   
